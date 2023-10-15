@@ -1,0 +1,7 @@
+# Arquivos de compilação binários
+**/bin/
+
+
+
+# Arquivos temporários ou intermediários
+**/obj/

@@ -28,7 +28,7 @@ namespace CloudCustomers.API.Services
 
             if(usersResponse.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                return new List<User> { };
+                return new List<User>();
 
             }
             var responseContent = usersResponse.Content;

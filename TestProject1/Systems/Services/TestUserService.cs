@@ -124,14 +124,17 @@ namespace TestProject1.Systems.Services
             //Act
             var result = await sut.GetAllUsers();
 
+            var uri = new Uri(endpoint);
+
             //Assert
             handlerMock
                 .Protected()
                 .Verify(
                 "SendAsync",
                 Times.Exactly(1),
-                ItExpr.Is<HttpRequestMessage>(req => req.Method == HttpMethod.Get && 
-                req.RequestUri.ToString() == endpoint),
+                ItExpr.Is<HttpRequestMessage>(
+                    req => req.Method == HttpMethod.Get 
+                    && req.RequestUri == uri),
                 ItExpr.IsAny<CancellationToken>()
                 );
 
